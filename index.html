@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d1019">
+  <meta name="description" content="循着内心的星轨，探索属于你的16型人格。一个关于自我与朋友的娱乐测试。">
+  <title>内在星图 · 16型人格探索</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/questions.js" defer></script>
+  <script src="js/personalities.js" defer></script>
+  <script src="js/share.js" defer></script>
+  <script src="js/test.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="内在星图首页"><span aria-hidden="true">✧</span> 内在星图</a>
+      <span class="header-note">THE INNER ATLAS</span>
+    </header>
+
+    <main>
+      <section id="home-page" class="home-page" aria-labelledby="home-title">
+        <div class="celestial" aria-hidden="true">
+          <svg viewBox="0 0 320 244" fill="none">
+            <circle cx="160" cy="120" r="88" class="orbit"/>
+            <circle cx="160" cy="120" r="105" class="orbit orbit-faint" stroke-dasharray="2 8"/>
+            <ellipse cx="160" cy="120" rx="138" ry="44" transform="rotate(-26 160 120)" class="orbit"/>
+            <path d="M160 9V31M160 209V231M49 120H71M249 120H271" class="orbit"/>
+            <g class="chart-lines">
+              <path d="m92 64 68-32 68 32M92 176l68 32 68-32M76 92l16-28 23-15M217 183l11-7 19-28"/>
+              <path d="m160 24 8 8-8 8-8-8Zm0 176 8 8-8 8-8-8Z"/>
+              <circle cx="92" cy="64" r="3"/><circle cx="228" cy="176" r="3"/>
+            </g>
+            <g class="chart-stars">
+              <circle cx="44" cy="76" r="1"/><circle cx="276" cy="157" r="1.2"/>
+              <circle cx="103" cy="211" r="1"/><circle cx="201" cy="26" r=".8"/>
+            </g>
+            <path d="M176 72a51 51 0 1 0 20 83 46 46 0 0 1-20-83Z" fill="url(#moon)"/>
+            <path d="m244 49 3 8 8 3-8 3-3 8-3-8-8-3 8-3Z" fill="#bfc0d2"/>
+            <circle cx="69" cy="184" r="3" fill="#a5a0c6"/>
+            <circle cx="115" cy="49" r="1.5" fill="#a5a0c6"/>
+            <circle cx="217" cy="183" r="1.5" fill="#a5a0c6"/>
+            <defs><linearGradient id="moon" x1="120" y1="76" x2="192" y2="171" gradientUnits="userSpaceOnUse"><stop stop-color="#e0dfeb"/><stop offset="1" stop-color="#79728e"/></linearGradient></defs>
+          </svg>
+        </div>
+        <p class="eyebrow">A QUIET JOURNEY INWARD</p>
+        <h1 id="home-title">每一种你，<br>都有自己的<span>星轨。</span></h1>
+        <p class="subtitle">48 个选择，拼出属于你的性格星图。</p>
+        <ul class="test-facts" aria-label="测试信息">
+          <li><strong>48</strong><span>题</span></li>
+          <li><strong>约6</strong><span>分钟</span></li>
+          <li><strong>16</strong><span>型人格</span></li>
+        </ul>
+        <button id="start-test" class="primary-button" type="button">开始测试 <span aria-hidden="true">↗</span></button>
+        <p class="entertainment-note">仅供娱乐与自我探索，不构成专业心理诊断。</p>
+        <noscript><p class="demo-note">请启用 JavaScript 以进入测试页。</p></noscript>
+      </section>
+
+      <section id="test-page" class="test-page" aria-labelledby="question-title" hidden>
+        <div class="test-heading"><span class="eyebrow">YOUR INNER ATLAS</span><span class="question-count"><b id="current-number">1</b> <span>/ 48</span></span></div>
+        <progress class="test-progress" value="0" max="48" aria-label="已完成0题，共48题">0 / 48</progress>
+        <article class="question-card">
+          <div class="question-meta"><span id="question-number">QUESTION 01</span><span id="question-type">五级量表 ✧</span></div>
+          <h2 id="question-title" tabindex="-1"></h2>
+          <p class="question-hint">没有标准答案，选择更接近你的感受。</p>
+          <div class="options" role="group" aria-labelledby="question-title"></div>
+          <div class="scale-labels" aria-hidden="true"><span>非常不同意</span><span>非常同意</span></div>
+          <nav class="question-navigation" aria-label="题目导航" aria-describedby="answer-note">
+            <button id="previous-question" class="secondary-button" type="button" disabled><span aria-hidden="true">←</span> 上一题</button>
+            <button id="next-question" class="primary-button" type="button" disabled><span id="next-label">下一题</span> <span aria-hidden="true">→</span></button>
+          </nav>
+        </article>
+        <p id="progress-note" class="demo-note" role="status" aria-live="polite">已答 0 / 48 题 · 可返回修改答案</p>
+        <p id="answer-note" class="demo-note">请选择一项后继续。答案仅在本次页面中保留，刷新会清空。</p>
+      </section>
+
+      <section id="complete-page" class="result-page" aria-labelledby="complete-title" hidden>
+        <header class="result-hero">
+          <div class="archive-heading"><span>内在星图 / 人格档案</span><span>48 / 48</span></div>
+          <p class="eyebrow cover-kicker">YOUR CONSTELLATION, REVEALED</p>
+          <div class="result-emblem" aria-hidden="true">
+            <svg viewBox="0 0 240 200" fill="none">
+              <circle cx="120" cy="100" r="70"/><circle cx="120" cy="100" r="87" stroke-dasharray="1 7"/>
+              <ellipse cx="120" cy="100" rx="107" ry="35" transform="rotate(-30 120 100)"/>
+              <path d="m120 20 69 120H51ZM120 180 51 60h138Z"/>
+              <path d="M132 70a34 34 0 1 0 15 56 31 31 0 0 1-15-56Z" class="emblem-moon"/>
+              <circle cx="51" cy="60" r="3"/><circle cx="189" cy="140" r="3"/>
+            </svg>
+          </div>
+          <p id="result-symbol" class="eyebrow"></p>
+          <p id="result-type" class="result-type"></p>
+          <h2 id="complete-title" tabindex="-1"></h2>
+          <ul id="result-keywords" class="result-keywords" aria-label="人格关键词"></ul>
+        </header>
+        <article class="result-panel result-intro">
+          <h3>你的性格轮廓</h3>
+          <p id="result-summary"></p>
+        </article>
+        <section class="result-panel" aria-labelledby="dimensions-title">
+          <h3 id="dimensions-title">四维星轨</h3>
+          <div id="result-dimensions"></div>
+          <p class="result-caption">百分比表示本次回答的得分倾向，不是能力高低或心理诊断。均分时依次参考量表题、场景选择；仍相同则固定取 E / S / T / J。</p>
+        </section>
+        <div id="result-details" class="result-details"></div>
+        <p class="demo-note">人格不是边界，只是观察自己的一个角度。本测试仅供娱乐与自我探索。</p>
+        <div class="result-actions">
+          <button id="restart-test" class="primary-button" type="button">重新测试</button>
+          <button id="generate-share" class="secondary-button share-placeholder" type="button" disabled aria-describedby="share-note">生成人格分享卡</button>
+          <button id="review-answers" class="secondary-button" type="button">检查答案</button>
+        </div>
+        <p id="share-note" class="demo-note" role="status" aria-live="polite">完成测试后可生成人格分享卡。</p>
+        <div id="share-preview" class="share-preview" hidden>
+          <a id="share-download" class="primary-button">保存图片</a>
+          <img id="share-image" alt="" width="1080" height="1440">
+        </div>
+      </section>
+      <!-- Export source; share.js renders a temporary off-screen clone. -->
+      <section id="share-card" class="share-card" hidden aria-hidden="true">
+        <p class="share-brand">内在星图 · THE INNER ATLAS</p>
+        <div class="share-emblem" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none">
+            <g stroke="#aaa1c0" stroke-width="0.7" opacity="0.65">
+              <circle cx="120" cy="80" r="54"/><circle cx="120" cy="80" r="68" stroke-dasharray="1 7"/>
+              <ellipse cx="120" cy="80" rx="95" ry="25" transform="rotate(-25 120 80)"/>
+              <path d="m120 13 58 101H62ZM120 147 62 46h116Z"/>
+            </g>
+            <path d="M131 54a28 28 0 1 0 12 47 26 26 0 0 1-12-47Z" fill="#bdb3d5"/>
+            <g fill="#bdb3d5"><circle cx="33" cy="42" r="1.5"/><circle cx="203" cy="114" r="2"/><circle cx="183" cy="25" r="1"/></g>
+          </svg>
+        </div>
+        <p data-share="type" class="result-type"></p>
+        <h2 data-share="nickname"></h2>
+        <p data-share="symbol" class="share-symbol"></p>
+        <ul data-share="keywords" class="result-keywords"></ul>
+        <div data-share="dimensions" class="share-dimensions"></div>
+        <p data-share="summary" class="share-summary"></p>
+        <p class="share-disclaimer">仅供娱乐与自我探索，不构成专业心理诊断。</p>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span aria-hidden="true">✦</span> 每个人，都是一片独特的星空</footer>
+  </div>
+</body>
+</html>
